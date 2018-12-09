@@ -295,7 +295,7 @@ function MqttPowerConsumptionTasmotaAccessory(log, config) {
 
 		if (topic == that.topics.energyGet) {			
 			try {
-			  data = JSON.parse(message);
+			var data = JSON.parse(message);
 			}
 			catch (e) {
 			  that.log("JSON problem");
@@ -303,6 +303,7 @@ function MqttPowerConsumptionTasmotaAccessory(log, config) {
 			if (data === null) {
 				return null
 			}
+			data = data.ENERGY; 
 			if (data.hasOwnProperty("Power")) {
 				that.powerConsumption = parseFloat(data.Power);
 				that.service.setCharacteristic(EvePowerConsumption, that.powerConsumption);
@@ -395,7 +396,7 @@ function MqttPowerConsumptionTasmotaAccessory(log, config) {
 			that.activeStat = status == that.activityParameter;
 			that.service.setCharacteristic(Characteristic.StatusActive, that.activeStat);
 		} else if (topic == that.topics.stateGet) {
-			data = null;
+			var data = null;
 			try {
 			  data = JSON.parse(message);
 			}

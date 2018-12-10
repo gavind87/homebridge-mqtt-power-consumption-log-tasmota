@@ -9,7 +9,7 @@ Like this? Please buy me a beer (or coffee) ;-) <a href="https://www.paypal.com/
 
 Installation
 --------------------
-    sudo npm install -g homebridge-mqtt-power-consumption-log-tasmota
+    sudo npm install -g gavind87/homebridge-mqtt-power-consumption-log-tasmota
 
 ## Description of log files
 Period file:

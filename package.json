@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "mqtt": ">=1.12.0",
+	 "fakegato-history": "^0.5.3",
 	"graceful-fs":">=0.0.1",
 	"node-schedule":">=1.1.0"
   },
